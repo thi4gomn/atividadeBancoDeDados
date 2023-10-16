@@ -1,0 +1,42 @@
+CREATE DATABASE Lojinha;
+
+CREATE TABLE funcionarios (
+	id_Serial INT PRIMARY KEY,
+	Nome VARCHAR(100)NOT NULL ,
+	sobrenome VARCHAR(100) NOT NULL,
+	dataDeNascimento DATE,
+	email TEXT UNIQUE,
+	salario DECIMAL(15,2)
+);
+
+INSERT INTO funcionarios (id_serial, nome, sobrenome, email, datadenascimento, salario)
+VALUES 
+(1, 'João', 'Silva', 'joao.silva@email.com', '1980-01-01', 5000.00),
+(2, 'Maria', 'Fernandes', 'maria.fernandes@email.com', '1985-02-15', 5500.00),
+(3,'Carlos', 'Mendes', 'carlos.mendes@email.com', '1979-03-30', 6000.00),
+(4,'Ana', 'Pereira', 'ana.pereira@email.com', '1990-04-20', 4500.00),
+(5,'Pedro', 'Santos', 'pedro.santos@email.com', '1982-05-25', 7000.00),
+(6,'Julia', 'Ribeiro', 'julia.ribeiro@email.com', '1987-06-10', 4800.00),
+(7,'Lucas', 'Oliveira', 'lucas.oliveira@email.com', '1991-07-15', 5300.00);
+
+SELECT * FROM funcionarios;
+
+CREATE TABLE Departamentos (
+    id_departamento INT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Localizacao TEXT,
+    NumeroDeFuncionarios INTEGER,
+    DataDeCriacao TIMESTAMP
+);
+
+INSERT INTO departamentos (id_departamento, nome, localizacao, numerodefuncionarios, datadecriacao)
+VALUES 
+(1, 'Recursos Humanos', 'São Paulo', 15, '2023-01-01'),
+(2, 'Finanças', 'Rio de Janeiro', 20, '2023-02-01'),
+(3, 'Marketing', 'Belo Horizonte', 12, '2023-03-01'),
+(4, 'Vendas', 'Porto Alegre', 30, '2023-04-01'),
+(5, 'TI', 'Curitiba', 25, '2023-05-01'),
+(6, 'Atendimento ao Cliente', 'Salvador', 18, '2023-06-01'),
+(7, 'Produção', 'Fortaleza', 40, '2023-07-01');
+
+SELECT * FROM departamentos;
